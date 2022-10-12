@@ -24,8 +24,6 @@ function App() {
 
   // Effect
   useEffect(() => {
-    //console.log(data);
-    // setData(Data);
   }, [data]);
 
   // Add Task
@@ -72,12 +70,12 @@ function App() {
     let filteredTasks = [...data].filter(task=> task.id !== updateID);
     let tasks = [...filteredTasks, editedTask];
     // push into state
-    setData(tasks)
+    setData(tasks);
 
     // clear fields
-    setUpdateID()
-    setUpdateTitle()
-    setUpdateContent()
+    setUpdateID();
+    setUpdateTitle();
+    setUpdateContent();
 
     // write to json file
     saveJSON(tasks);

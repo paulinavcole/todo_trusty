@@ -23,18 +23,18 @@ const WriteTextToFile = async (content) => {
     fs.writeFile('./src/data.json', content, (err) => {
         console.log(content);
         if (err) {
-            console.log(err)
+            console.log(err);
         } else {
-            console.log('written to file')
+            console.log('written to file');
         }
-    })
+    });
 }
 
 // post route
 app.post('/write', async(req, res, next) => {
     const requestContent = JSON.stringify(req.body);
-    await WriteTextToFile(requestContent)
-})
+    await WriteTextToFile(requestContent);
+});
 
 // 404 route
 app.use((req, res, next) => res.status(404).send({
@@ -48,4 +48,4 @@ app.listen(port, () => {
     http://localhost:4999
     `
     )
-})
+});
